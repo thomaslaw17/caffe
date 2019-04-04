@@ -78,6 +78,9 @@ if(USE_OPENCV)
   message(STATUS "OpenCV found (${OpenCV_CONFIG_PATH})")
   add_definitions(-DUSE_OPENCV)
 endif()
+if(USE_OPENCV_FOUR)
+  add_definitions(-DUSE_OPENCV_FOUR)
+endif()
 
 # ---[ BLAS
 if(NOT APPLE)

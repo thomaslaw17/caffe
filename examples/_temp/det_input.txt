@@ -1,0 +1,1 @@
+/Users/thomas.law/Projects/caffe/examples/images/fish-bike.jpg

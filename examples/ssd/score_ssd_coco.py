@@ -342,9 +342,9 @@ clip = False
 
 # Solver parameters.
 # Defining which GPUs to use.
-gpus = "0"
-gpulist = gpus.split(",")
-num_gpus = len(gpulist)
+# gpus = "0"
+# gpulist = gpus.split(",")
+# num_gpus = len(gpulist)
 
 # The number does not matter since we do not do training with this script.
 batch_size = 1
@@ -353,11 +353,11 @@ iter_size = accum_batch_size / batch_size
 solver_mode = P.Solver.CPU
 device_id = 0
 batch_size_per_device = batch_size
-if num_gpus > 0:
-  batch_size_per_device = int(math.ceil(float(batch_size) / num_gpus))
-  iter_size = int(math.ceil(float(accum_batch_size) / (batch_size_per_device * num_gpus)))
-  solver_mode = P.Solver.GPU
-  device_id = int(gpulist[0])
+# if num_gpus > 0:
+#   batch_size_per_device = int(math.ceil(float(batch_size) / num_gpus))
+#   iter_size = int(math.ceil(float(accum_batch_size) / (batch_size_per_device * num_gpus)))
+#   solver_mode = P.Solver.GPU
+#   device_id = int(gpulist[0])
 
 if normalization_mode == P.Loss.NONE:
   base_lr /= batch_size_per_device
@@ -541,9 +541,9 @@ with open(job_file, 'w') as f:
   f.write('./build/tools/caffe train \\\n')
   f.write('--solver="{}" \\\n'.format(solver_file))
   f.write('--weights="{}" \\\n'.format(pretrain_model))
-  if solver_param['solver_mode'] == P.Solver.GPU:
-    f.write('--gpu {} 2>&1 | tee {}/{}_test{}.log\n'.format(gpus, job_dir, model_name, max_iter))
-  else:
+#   if solver_param['solver_mode'] == P.Solver.GPU:
+#     f.write('--gpu {} 2>&1 | tee {}/{}_test{}.log\n'.format(gpus, job_dir, model_name, max_iter))
+#   else:
     f.write('2>&1 | tee {}/{}.log\n'.format(job_dir, model_name))
 
 # Copy the python script to job_dir.
