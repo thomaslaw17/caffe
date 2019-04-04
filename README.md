@@ -141,3 +141,15 @@ We have provided the latest models that are trained from different datasets. To 
    * trainval1: [SSD300*](https://drive.google.com/open?id=0BzKzrI_SkD1_a2NKQ2d1d043VXM), [SSD500](https://drive.google.com/open?id=0BzKzrI_SkD1_X2ZCLVgwLTgzaTQ)
 
 <sup>[1]</sup>We use [`examples/convert_model.ipynb`](https://github.com/weiliu89/caffe/blob/ssd/examples/convert_model.ipynb) to extract a VOC model from a pretrained COCO model.
+
+### Disclaimer
+
+This repositary is forked from https://travis-ci.org/weiliu89/caffe and https://github.com/Robert-JunWang/Pelee. 
+This repositary is used for educational preposes only.
+
+### COMP7404 instructions
+
+This repositary is only tested under MacOS Mojave under python 2.7 environment constructed by anaconda. Major effor was spent on changing code to fit the environmnet in MacOS Mojave. 
+
+The Pelee project is placed in examples/pelee. Please read the readme file there for the installation instructions.
+
